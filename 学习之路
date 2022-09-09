@@ -4,6 +4,33 @@
 
 
 
+
+
+
+int main()
+{
+	int ret = 0;
+	char password[20] = { 0 }; 
+		printf("%s", password);//输入密码，存放在password数组中
+	scanf("%s", password);//因为输入的是密码和一个回车\n
+	getchar();//但是getchar只取走了密码还有\n没被取走这个是为了取走\n
+	printf("请确认(Y/N):>");
+	ret = getchar();
+	if (ret == 'Y')
+	{
+		printf("确认成功\n");
+	}
+	else
+	{
+		printf("放弃确认\n");
+	}
+
+	return 0;
+}
+
+
+
+
 int main()
 {
 	float r0, r1, r2, r3, r5, p1, p2, p3, p4, p5;
