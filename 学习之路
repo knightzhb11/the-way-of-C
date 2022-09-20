@@ -3,7 +3,154 @@
 #include <string.h>
 
 
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int f = 0;
+//	printf("请输入你要求的数值：");
+//	scanf("%d", &f);
+//	for (n = 1; n <= f; n++)
+//	{
+//		ret = ret * n;//简化版本
+//		sum = sum + ret;
+//	}
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
 
+
+//int main()
+//{
+//	int i = 0;//使用镶嵌的for循环进行阶乘的加和
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int f = 0;
+//	printf("请输入你要求的数值：");
+//	scanf("%d", &f);
+//	for (n = 1; n <= f; n++)
+//	{
+//		ret = 1;//在循环中重置ret的值以便求出每个数的阶乘
+//		for (i = 1; i <= n; i++)
+//		{
+//			ret = ret * i;
+//		}
+//		sum = sum + ret;
+//	}
+//	printf("sum=%d\n", sum);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 1;//while循环和do while循环求阶乘
+//	int n = 0;
+//	int res = 1;
+//	printf("您要求的阶乘：");
+//	scanf("%d", &n);
+//	do
+//	{
+//		res = res * i;
+//		i++;
+//	} while (i <= n);
+//	/*while (i <= n)
+//	{
+//		res = res * i;
+//		i++;
+//	}*/
+//	printf("%d\n", res);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;//for循环语句求阶乘
+//	int n = 0;
+//	int res = 1;
+//	printf("请输入你要求得阶乘：");
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		res = res * i;
+//	}
+//	printf("%d\n", res);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 1;
+//	do
+//	{
+//		printf("%d\n", i);
+//		i++;
+//	} while (i <= 10);//do while循环语句
+//	return 0;
+//}
+
+//int main()
+//{
+//	double a, b, c, disc, x1, x2, p, q;
+//	scanf("%lf%lf%lf" ,&a, &b, &c);
+//
+//	disc = b * b - 4 * a * c;
+//	p = -b / (2.0 / a);
+//	q = sqrt(disc) / (2.0 * a);
+//	x1 = p + q;
+//	x2 = p - q;
+//	printf("x1=%f\nx2=%f\n", x1, x2);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int k = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	/*printf("请输入您想计算的阶乘数值：\n");
+//	scanf("%d", &i);*/
+//	for(i=1;i<=3;i++)
+//	{
+//		for (k = 1; k <= i; k++)
+//		{
+//			ret = ret * k;
+//		}
+//		
+//		sum = sum + ret;
+//	}
+//	printf("%d\n", sum);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 1;
+//	do
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d\n", i);
+//		i++;
+//	}
+//	while (i <= 10);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	do
+//	{
+//		printf("hello world\n");
+//		i++;
+//	}
+//	while (i <= 10);
+//	return 0;
+//}
 
 
 
