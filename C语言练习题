@@ -121,13 +121,15 @@ int main()//99乘法表
 {
 	int m = 1;
 	int n = 1;
-	for (m=1;m <= 4;m++)
+	while(m <=9)
 	{
-		for (n = 1; n <= 5; n++)
+		for (n=1;n<=m;n++)
 		{
-			printf("%2d\t", m * n);
+			printf("%d*%d=%-2d  ",n, m, m*n);
+			//%2d是左对齐%-2d是右对齐
 		}
 		printf("\n");
+		m++;
 	}
 	return 0;
 }
