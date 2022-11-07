@@ -2,6 +2,500 @@
 #include <stdio.h>
 #include <string.h>
 
+//通过指针引用数组元素
+//1下标法
+//int main()
+//{
+//	int a[10];
+//	int i;
+//	printf("please input 10 numbers:\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf_s("%d", &a[i]);
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	return 0;
+//}
+//2指针法
+//int main()
+//{
+//	int a[10];
+//	int i;
+//	int *p = a;
+//	printf("please input 10 number: ");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", *(p+i));//*(p+i)=a[i]
+//	}
+//	return 0;
+//}
+//3地址
+//int main()
+//{
+//	int a[10];
+//	int i;
+//	int* p = a;
+//	printf("please input 10 number: \n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &a[i]);
+//	}
+//	for (p = a;p < (a+10); p++)//以地址来进行关系运算
+//	{
+//		printf("%d ", *p);
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	int a[10];
+//	int i;
+//	int* p = a;
+//	printf("please input 10 number: \n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", p++);
+//		//scabf函数后面要有一个地址来存放数据，可以取地址符也可以用一个地址
+//	}
+//
+//	for (p = a; p < (a + 10); p++)//以地址来进行关系运算
+//	{
+//		printf("%d ", *p);
+//	}
+//	return 0;
+//}
+
+
+
+//void sort(int arr[], int size)
+//{
+//	int j, i, tem;
+//	for (i = 0; i < size - 1; i++)
+//	{
+//		int count = 0;
+//		for (j = 0; j < size - 1 - i; j++)	
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				tem = arr[j];
+//				arr[j] = arr[j + 1];
+//				arr[j + 1] = tem;
+//				count = 1;
+//
+//			}
+//		}
+//		if (count == 0)
+//			break;
+//	}
+//
+//}
+//int main()
+//{
+//	int arr[10];
+//	int i;
+//
+//	printf("请输入10个数\n");
+//	for (i = 0; i < 10; i++)		//接收用户的数值
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	printf("排序前的数组>");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//
+//	printf("\n排序后的数组>");
+//	sort(arr, 10);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//
+//	return 0;
+//}
+// 
+
+ 
+
+//void sort(int arr[],int sz)
+//{
+//	int i, j, m;
+//	for (i = 0; i < sz-1; i++)
+//	{
+//		int count = 0;
+//		for (j = 0; j < sz - i - 1; j++)
+//		{
+//			if (arr[j] > arr[j + 1])
+//			{
+//				m = arr[j];
+//				arr[j] = arr[j+1];
+//				arr[j+1] = m;
+//				count = 1;
+//			}
+//		}
+//		if (count == 0)
+//			break;
+//	}
+//}
+//
+//int search(int arr[], int k, int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (k > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else if (k < arr[mid])
+//
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			return mid;
+//		}
+//	}
+//	return 0;
+//}
+//
+//int main()
+//
+//{
+//	int arr[10];
+//	int k;
+//	int i;
+//	printf("请输入10位数组：");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	/*printf("pleasse input k:");
+//	scanf("%d", &k);*/
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	sort(arr,sz);
+//	printf("排序后的数组为：");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n请输入您要查找的数：");
+//	scanf("%d", &k);
+//	int ret = search(arr, k, sz);
+//	if (ret == 0)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了下标是 %d\n", ret);
+//	}
+//	return 0;
+//}
+
+
+
+//二分查找函数1
+//int search(int arr[], int k,int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if ( k > arr[mid])
+//		{
+//			left = mid + 1;
+//		}
+//		else if ( k < arr[mid])
+//			
+//		{
+//			right = mid - 1;
+//		}
+//		else 
+//		{
+//			return mid;
+//		}
+//	}
+//		return 0;
+//}
+//
+//int main()
+//
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 7;
+//	/*printf("pleasse input k:");
+//	scanf("%d", &k);*/
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int ret = search(arr, k, sz);
+//	if (ret == 0)
+//	{
+//		printf("找不到\n");
+//	}
+//	else
+//	{
+//		printf("找到了下标是 %d\n", ret);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//二分查找输出下标
+//int main()
+//{
+//	int arr[10]={1,2,3,4,5,6,7,8,9,10};
+//	/*int i;
+//	printf("please input 10 numbers\n");
+//	for (i = 0; i < 11; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}*/
+//	int k = 7;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;//整型数据结果为整数部分
+//		if (arr[mid] > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else if (arr[mid] < k)
+//		{
+//			left = mid + 1;
+//		}
+//		else
+//		{
+//			printf("找到了，下标是：%d\n", mid);
+//			break;
+//		}
+//	}
+//	if (left > right)
+//	{
+//		printf("找不到\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+//写一个函数没次调用都加一
+//void Add(int* p)
+//{
+//	(*p)++;
+//}
+//int main()
+//{
+//	int num = 0;
+//	Add(&num);
+//	Add(&num);
+//	Add(&num);
+//	Add(&num);
+//	printf("num = %d", num);
+//
+//	return 0;
+//}
+
+
+
+//int main()//函数的嵌套调用
+//{
+//	int max4(int a, int b, int c, int d);hfgfd
+//	int a, b, c, d, max;
+//	printf("please input 4 number:");
+//	scanf("%d%d%d%d", &a, &b, &c, &d);
+//	max = max4(a, b, c, d);
+//	printf("max=%d", max);
+//	return 0;
+//}
+//int max4(int a, int b, int c, int d)
+//{
+//	int max2(int a, int b);
+//	int m;
+//	m = max2(a, b);
+//	m = max2(m, c);
+//	m = max2(m, d);
+//	return m;
+//
+//}
+//int max2(int a, int b)
+//{
+//	if (a > b)
+//		return a;
+//	else
+//		return b;
+//}
+
+
+
+//int main()
+//{
+//	int max(float, float);
+//	float a, b;
+//	int c;
+//	scanf("%f%f", &a, &b);
+//	c = max(a, b);
+//	printf("%d",c);
+//
+//	return 0;
+//}
+//int max(float x, float y)
+//{
+//	float z;
+//	z = x > y ? x : y;
+//	return z;
+//}
+
+
+
+//int main()
+//{
+//	int i=0;
+//	int num = 0;
+//	int n;
+//	printf("please input number: ");
+//	scanf("%d", &n);
+//	for (i = 2; i <= n; i++)
+//	{
+//		int j = 0;
+//		for (j = 2; j <= i/2; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				break;
+//			}
+//		}
+//		if (j > i/2)
+//		{
+//			printf("%-6d", i);
+//			num++;
+//		}
+//	}
+//	printf("\n");
+//	printf("%d", num);
+//	return 0;
+//}
+
+
+
+//求n的阶乘
+//2.递归法
+//int factorial(int n)
+//{
+//	if (n == 1)
+//		return 1;
+//	else
+//		return n * factorial(n - 1);
+//}
+//
+//int main()
+//{
+//	int n;
+//	scanf("%d", &n);
+//	int ret = factorial(n);
+//	printf("%d", ret);
+//	return 0;
+//}
+
+
+// 1.循环函数法
+//int jiecheng(int n)
+//{
+//	int ret = 1;
+//	int i = 0;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}
+//	return ret;
+//}
+//int main()
+//{
+//	int n;
+//	printf("please input n:");
+//	scanf("%d", &n);
+//	int ret = 0;
+//	ret = jiecheng(n);
+//	/*for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}*/
+//
+//	printf("%d", ret);
+//	return 0;
+//}
+
+
+////自定义一个strlen函数
+////使用递归
+//int my_strlen(char* arr)
+//{
+//	if (*arr != '\0')
+//	{
+//		return 1 + my_strlen(arr + 1);
+//	}
+//	else
+//		return 0;
+//}
+////未使用递归
+////int my_strlen(char* p)
+////{
+////	int count = 0;
+////	while (*p != '\0')
+////	{
+////		count++;
+////		p++;
+////	}
+////	return count;
+////}
+//
+//int main()
+//{
+//	char arr[10];
+//	gets_s(arr);
+//	int num = my_strlen(arr);
+//	printf("%d", num);
+//	return 0;
+//}
+
+//输入一个数，将其每一位依次打印出来
+//函数递归
+//void  print (int n)
+//{
+//	if (n > 9)
+//	{
+//		print(n/10);
+//	}
+//	printf("  %d  ", n % 10);
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	printf("please input n:");
+//	scanf("%d", &n);
+//	print(n);
+//	return 0;
+//}
+
+
 
 int main()//输入三行字符串统计其中的各种字符的数量
 {
