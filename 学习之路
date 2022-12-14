@@ -2,6 +2,1108 @@
 #include <stdio.h>
 #include <string.h>
 
+//顺序结构
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<string.h>
+
+//16进制转10进制
+//void zh(int num, int n) 
+//{
+//    if (num > n - 1) 
+//    {
+//        zh(num / n, n);
+//    }
+//    printf("%d", num % n);
+//}
+//void main() 
+//{
+//    int num;
+//    int n;
+//    printf("输入一个十六进制的数\n");
+//    scanf("%x", &num);
+//    printf("请输入要转换的进制\n");
+//    scanf("%d", &n);
+//    printf("用函数输出\n");
+//    zh(num, n);
+//}
+
+//int main()
+//{
+//    int a;
+//    scanf("%x", &a);
+//    printf("%d", a);
+//    return 0;
+//}
+
+//32判断回文字符串
+//int f(char arr[])
+//{
+//    int i, j, ret;
+//    j = strlen(arr);
+//    for (i = 0, j = j - 1; i <= j; i++, j--)
+//    {
+//        if (arr[i] != arr[j])
+//        {
+//            ret = 0;
+//            break;
+//        }
+//        else
+//            ret = 1;
+//    }
+//    return ret;
+//}
+//int main()
+//{
+//    char arr[20];
+//    gets_s(arr);
+//    int ret = f(arr);
+//    if (ret == 1)
+//    {
+//        printf("为回文");
+//    }
+//    else
+//        printf("不为回文");
+//    return 0;
+//}
+//int main(void)
+//{
+//    int i, k;
+//    char line[10];
+//    /*输入字符串*/
+//    printf("Enter a string:");
+    //k = 0;
+    //while ((line[k] = getchar()) != '\n')
+    //    k++;
+    //line[k] = '\0';
+    ///*判断字符串line是否为回文*/
+    //i = 0;//i是字符串首字符的下标 
+    //k = k - 1;//k是字符串尾字符的下标 
+    ///*i和k两个下标从字符串首尾两端同时向中间移动，逐级判断对应字符是否相等*/
+    //while (i < k) 
+    //{
+    //    if (line[i] != line[k])//若对应字符不相等，则提前结束循环 
+    //        break;
+    //    i++;
+    //    k--;
+    //}
+    //if (i >= k)//判断for循环是否正常结束，若是则说明字符串是回文 
+    //    printf("It is a palindrome\n");
+    //else
+    //    printf("It is not a palindrome\n");
+//    return 0;
+//}
+//int f(char line[10])
+//{
+//    int i, k;
+//    int ret = 0;
+//    k = 0;
+//    while ((line[k] = getchar()) != '\n')
+//        k++;
+//    line[k] = '\0';
+//    i = 0;
+//    k = k - 1;
+//    while (i < k)
+//    {
+//        if (line[i] != line[k])
+//            break;
+//        i++;
+//        k--;
+//    }
+//    if (i >= k)
+//        ret = 1;
+//    else
+//        ret = 0;
+//    return ret;
+//}
+//
+//int main()
+//{
+//    char arr[10];
+//    gets_s(arr);
+//    int ret = f(arr);
+//    printf("\n%d\n", ret);
+//}
+
+//31用选择法对数组中的10个数排序
+//void bubble_sort(int arr[], int sz)
+//{
+//    int i = 0;
+//
+//    for (i = 0; i < sz - 1; i++)
+//    {
+//        int flag = 1;
+//        int j = 0;
+//        for (j = 0; j < sz - 1 - i; j++)
+//        {
+//            if (arr[j] > arr[j + 1])
+//            {
+//                int tmp = arr[j];
+//                arr[j] = arr[j + 1];
+//                arr[j + 1] = tmp;
+//                flag = 0; 
+//            }
+//        }
+//
+//        if (flag == 1)
+//        {
+//            break; 
+//        }
+//    }
+//
+//}
+//
+//int main()
+//{
+//    int arr[] = { 4,6,5,1,2,8,9 };
+//    int i = 0;
+//    int sz = sizeof(arr) / sizeof(arr[0]);
+//    bubble_sort(arr, sz);
+//    for (i = 0; i < sz; i++)
+//    {
+//        printf("%d ", arr[i]);
+//    }
+//}
+//
+//void sort(int arr[10])
+//{
+//	int i, j;
+//	for (j = 0; j < 9; j++)
+//	{
+//		for (i = 0; i < 9 - j; i++)//注意是9-i，出错好多次
+//		{
+//			int temp;
+//			if (arr[i] > arr[i + 1])
+//			{
+//				temp = arr[i];
+//				arr[i] = arr[i + 1];
+//				arr[i + 1] = temp;
+//			}
+//		}
+//	}
+//}
+//void sort1(int arr[])
+//{
+//	int i, j, k, t;
+//	for (i = 0; i < 9; i++)
+//	{
+//		k = i;
+//		for (j = i + 1; j < 10; j++)
+//		{
+//			if (arr[j] < arr[k])
+//			{
+//				k = j;
+//			}
+//		}
+//		t = arr[k];
+//		arr[k] = arr[i];
+//		arr[i] = t;
+//	}
+//}
+//int main()
+//{
+//	int a[10] = { 2,9,10,76,68,49,29,40,61,90 };
+//	int i;
+//	printf("排序前：\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d  ", a[i]);
+//	}
+//	sort1(a);
+//	printf("\n排序后：\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d  ", a[i]);
+//	}
+//	return 0;
+//}
+
+//30一维数组名做函数参数
+//float average(int arr[10])
+//{
+//	int i, sum;
+//	float aver = 0;
+//	sum = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		sum = sum + arr[i];
+//	}
+//	aver = sum / 10.0;
+//	return (aver);
+//}
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	float aver;
+//	aver = average(arr);
+//	printf("平均成绩是：%5.2f",aver);
+//	return 0;
+//}
+
+//29有一篇文章共有3行文字统计各种字符的数量
+//int main()
+//{
+//	char a[3][80];
+//    int i, j;
+//    int q, p, z, o, n;
+//	for (i = 0; i < 3; i++)
+//	{
+//        printf("请输入第%d行",i + 1);
+//		gets_s(a[i]);
+//	}
+//    for (i = 0; i < 3; i++)
+//    {
+//        p = 0, q = 0, z = 0, o = 0, n = 0;
+//        for (j = 0; a[i][j] != '\0'; j++)
+//        {
+//            if (a[i][j] >= 'A' && a[i][j] <= 'Z') {
+//                q++;
+//            }
+//            else if (a[i][j] >= 'a' && a[i][j] <= 'z')
+//            {
+//                p++;
+//            }
+//            else if (a[i][j] >= '0' && a[i][j] <= '9')
+//            {
+//                z++;
+//            }
+//            else
+//                if (a[i][j] == ' ')
+//                {
+//                    o++;
+//                }
+//                else
+//                {
+//                    n++;
+//                }
+//        }
+//        printf("\n%d行有：\n大写字母；%d\t小写字母；%d\t数字；%d\t空格；%d\t其他；%d\t",i+1, q, p, z, o, n);
+//    }
+//    return 0;
+//}
+
+//28杨辉三角
+//int main()
+//{
+//    int a[100][100], i, j, num;
+//    printf("请输入需要打印的行数：");
+//    scanf("%d", &num);
+//    for (i = 0; i < 100; i++) //初始化数组不进行初始化会出现乱码
+//    {
+//        for (j = 0; j < 100; j++)
+//            a[i][j] = 0;
+//    }
+//    for (i = 0; i < num; i++) //使数组的第一列都为1
+//        a[i][0] = 1;
+//    for (i = 1; i < num; i++)  //第i行j列元素等于第i-1行j列和第i-1行j-1列元素的和
+//        for (j = 1; j <= i; j++)
+//            a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
+//    for (i = 0; i < num; i++) //输出杨辉三角形
+//    {
+//        for (j = 0; j <= i; j++)
+//            printf("%-3d ", a[i][j]);
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+//27逆序输出函数
+//int main()
+//{
+//	int arr[5];
+//	int arr1[5];
+//	int i, j;
+//	printf("请输入5个数\n");
+//	for (i = 0; i < 5; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	for (i = 0,j = 4; i < 5; i++,j--)
+//	{
+//		arr1[j] = arr[i];
+//	}
+//	printf("\n");
+//	for (j = 0; j < 5; j++)
+//	{
+//		printf("%d ", arr1[j]);
+//	}
+//	return 0;
+//}
+
+//26有一个已排好的数组要求输入一个数后按排序规律将其插入数组中
+//int main()
+//{
+//	int arr[10] = { 1,3,5,7,9,11,13,15,17};
+//	int num;
+//	int i, j, temp1, temp2;
+//	for (i = 0; i < 9; i++)
+//	{
+//		printf("%d  ", arr[i]);
+//	}
+//	printf("\n请输入一个数字：");
+//	scanf_s("%d", &num);
+//	for (i = 0; i < 9; i++)
+//	{
+//		if (num < arr[i])
+//		{
+//			temp1 = arr[i];
+//			arr[i] = num;
+//			for (j = i + 1; j < 10; j++)
+//			{
+//				temp2 = arr[j];
+//				arr[j] = temp1;
+//				temp1 = temp2;
+//			}
+//			break;
+//		}
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("%d  ", arr[i]);
+//	}
+//	return 0;
+//}
+//void paixu(int arr[10], int q)
+//{
+//	int m, n, temp;
+//	for (m = 0; m < q; m++)
+//	{
+//		for (n = 0; n < 8 - m; n++)
+//		{
+//			if (arr[n] > arr[n + 1])
+//			{
+//				int temp;
+//				temp = arr[n + 1];
+//				arr[n + 1] = arr[n];
+//				arr[n] = temp;
+//			}
+//		}
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10];
+//	int i;
+//	int m, n;
+//	int num = 0;
+//	printf("请输入9个数：");
+//	for (i = 0; i < 9; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	paixu(arr, 8);
+//	for (i = 0; i < 9; i++)
+//	{
+//		printf("  %d ", arr[i]);
+//	}
+//	printf("\n请再输入一个数:");
+//	scanf("%d", &arr[9]);
+//	paixu(arr, 10);
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("  %d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//25筛选法求100以内的素数
+//int main()
+//{
+//	int n, i;
+//	for (n = 2; n < 100; n++)
+//	{
+//		for (i = 2; i < n; i++)
+//		{
+//			if (n % i == 0)
+//				break;
+//		}
+//		if (n == i)
+//			printf("%d  ", n);
+//	}
+// return 0;
+//}
+
+//24有3个字符串，要求找出其中最长的字符
+//int main()
+//{
+//	char arr[3][80];
+//	char arr2[80];
+//	int i;
+//	for (i = 0; i < 3; i++)
+//	{
+//		gets_s(arr[i]);
+//	}
+//	if (strcmp(arr[0], arr[1]) > 0)
+//	{
+//		strcpy(arr2, arr[0]);
+//	}
+//	else
+//		strcpy(arr2, arr[1]);
+//	if (strcmp(arr[2], arr2) > 0)
+//	{
+//		strcpy(arr2, arr[2]);
+//	}
+//	printf("\nthe longest :\n%s\n", arr2);
+//	return 0;
+//}
+
+//23abc三个数满足下列条件
+//int main() 
+//{
+//    int a, b, c, num = 0;
+//    for (c = 0; c < 100; c++) 
+//    {
+//        for (b = c + 1; b < 100; b++)
+//        {
+//            for (a = b + 1; a < 100; a++)
+//            {
+//                if ((b * b * c * c + a * a * c * c == a * a * b * b) && (a + b + c < 100)) 
+//                {
+//                    printf("A=%d, B=%d, C=%d\n", a, b, c);
+//                    num++;
+//                }
+//            }
+//        }
+//    }
+//    printf("共有%d种组合。", num);
+//
+//    return 0;
+//}
+
+//22输入一行字符，统计其中有多少个单词单词之间用空格隔开
+//int main()
+//{
+//	char arr[100];
+//	int i = 0;
+//	gets_s(arr);
+//	int num = 0;
+//	while (arr[i] != '\n')
+//	{
+//		if (arr[i] == ' ' || arr[i] == '\n')
+//		{
+//			num++;
+//		}
+//		i++;
+//	}
+//	printf("单词个数为：%d", num);
+//}
+//int main()
+//{
+//	char arr[100];
+//	int i, num = 0, word = 0;
+//	char c;
+//	gets_s(arr);
+//	for (i = 0; (c = arr[i]) != '\0'; i++)
+//	{
+//		if (c == ' ')
+//			num++;
+//	}
+//	printf("%d", num+1);
+//	return 0;
+//}
+
+
+//21有一个3×4的矩阵，求出最大的元素的值以及对应的行号和列号
+//int main()
+//{
+//	int arr[3][4];
+//	int i, j;
+//	int m, n;
+//	int max = 0;
+//	printf("请输入12个数字：");
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			scanf("%d", &arr[i][j]);
+//		}
+//	}
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 4; j++)
+//		{
+//			if (arr[i][j] >= max)
+//			{
+//				max = arr[i][j];
+//				m = i;
+//				n = j;
+//			}
+//		}
+//	}
+//	printf("最大值为%d\n", max);
+//	printf("行号%d,列号%d", m, n);
+//	return 0;
+//}
+
+//20将一个二维数组行和列元素互换，存到另一个数组中
+//int main()
+//{
+//	int arr1[2][3] = { {1,2,3},{4,5,6} };
+//	int arr2[3][2];
+//	int i, j;
+//	printf("原始数据：\n");
+//	for (i = 0; i < 2; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//		{
+//			printf("%d  ", arr1[i][j]);
+//			arr2[j][i] = arr1[i][j];
+//		}
+//		printf("\n");
+//	}
+//	printf("转换后数据：\n");
+//	for (i = 0; i < 3; i++)
+//	{
+//		for (j = 0; j < 2; j++)
+//		{
+//			printf("%d  ", arr2[i][j]);
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+//19用数组打印fibonacci
+//int main()
+//{
+//	int arr[20] = { 1,1 };
+//	int i;
+//	for (i = 2; i < 20; i++)
+//	{
+//		arr[i] = arr[i - 1] + arr[i - 2];
+//	}
+//	for (i = 0; i < 20; i++)
+//	{
+//		if (i % 5 == 0)
+//			printf("\n");
+//		printf("%6d	", arr[i]);
+//	}
+//	return 0;
+//}
+
+//18用二分法求方程的根
+//int main()
+//{
+//	int x1, x2;
+//	float f1, f2, x0, f0;
+//	do
+//	{
+//		printf("请输入区间：");
+//		scanf("%d%d", &x1, &x2);
+//		f1 = x1 * ((2 * x1 - 4) * x1 + 3) - 6;
+//		f2 = x2 * ((2 * x2 - 4) * x2 + 3) - 6;
+//	} while (f1 * f2 > 0);
+//	do
+//	{
+//		x0 = (x1 + x2) / 2;
+//		f0 = x0 * ((2 * x0 - 4) * x0 + 3) - 6;
+//		if (f0 * f1 < 0)
+//		{
+//			x2 = x0;
+//			f2 = f0;
+//		}
+//		else
+//		{
+//			x1 = x0;
+//			f1 = f0;
+//		}
+//	} while (fabs(f0) >= 1e-5);
+//	printf("x=%4.4f\n", x0);
+//	return 0;
+//}
+
+//17用牛顿迭代法求方程的根
+//int main()
+//{
+//	float x = 0, x1, f, f1;
+//	printf("请输入x的值：");
+//	scanf("%f", &x1);
+//	while (fabs(x - x1) >= 1e-5)
+//	{
+//		x = x1;
+//		f = ((2 * x - 4) * x + 3) * x - 6;
+//		f1 = (6 * x - 8) * x + 3;
+//		x1 = x - f / f1;
+//	}
+//	printf("该点附近的根为%5.2f\n", x1);
+//	return 0;
+//}
+
+//16用迭代发求x=根号a
+//int main()
+//{
+//	float x0, x1, a = 0;
+//	printf("请输入一个恰当的数字a:");
+//	scanf("%f", &a);
+//	x0 = a / 2;
+//	x1 = (x0 + a / x0) / 2;
+//	while (fabs(x0 - x1) >= 1e-5)
+//	{
+//		x0 = x1;
+//		x1 = (x0 + a / x0) / 2;
+//	}
+//	printf("%3.2f的精确结果为%3.6f\n", a, x1);
+//	return 0;
+//}
+
+//15完数一个数恰好等于他的因子和
+//int main()
+//{
+//    int num = 0;
+//    int i = 0;
+//    for (num = 1; num <= 1000; num++)
+//    {
+//        int j = 0;
+//        int sum = 0;
+//        int arr[100];//定义一个数组，存储因子
+//        for (i = 1; i <= num/ 2; i++) //判断完数
+//        {
+//            if (0 == num % i)
+//            {
+//                arr[j] = i;
+//                j++;
+//                sum = sum + i;
+//            }
+//        }
+//        if (num == sum)
+//        {
+//            printf("%-3d its factors are ", sum);
+//            int k = 0;
+//            for (k = 0; k < j; k++)  //输出完数的各个因子
+//            {
+//                printf("%d ", arr[k]);
+//            }
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//void is_Perfectnumber(int number) //判断完数并输出
+//{
+//    int i = 0;
+//    int j = 0;
+//    int sum = 0;
+//    int arr[100];//定义一个数组，存储因子
+//    for (i = 1; i <= number / 2; i++) //判断完数
+//    {
+//        if (0 == number % i)
+//        {
+//            arr[j] = i;
+//            j++;
+//            sum = sum + i;
+//        }
+//    }
+//    if (number == sum)
+//    {
+//        printf("%-3d its factors are ", sum);
+//        int k = 0;
+//        for (k = 0; k < j; k++)  //输出完数的各个因子
+//        {
+//            printf("%d ", arr[k]);
+//        }
+//        printf("\n");
+//    }
+//}
+//
+//int main()
+//{
+//    int num = 0;
+//    for (num = 1; num <= 1000; num++)
+//    {
+//        is_Perfectnumber(num);
+//    }
+//    return 0;
+//}
+//
+//int main()//简单版本不输出因子
+//{
+//	int i;
+//	int j;
+//	int sum;
+//	for (i = 1; i < 1000; i++)
+//	{
+//		sum = 0;
+//		for (j = 1; j < i; j++)
+//		{
+//			if (i % j == 0)
+//			{
+//				sum = sum + j;
+//			}
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d\n", i);
+//		}
+//	}
+//	return 0;
+//}
+
+//14水仙花数
+//int main()
+//{
+//	int i;
+//	int m, n, k;
+//	printf("所有的水仙花数为\n");
+//	for (i = 100; i < 1000; i++)
+//	{
+//		m = i / 100;
+//		n = (i - m * 100) / 10;
+//		k = i % 10;
+//		if ((m * m*m + n*n * n +k* k * k )== i)
+//		{
+//			printf("%d\n", i);
+//		}
+//		else
+//			continue;
+//	}
+//	return 0;
+//}
+
+//13求阶乘的和
+//int main()
+//{
+//	int n;
+//	int i, j;
+//	int ret = 1;
+//	int sum = 0;
+//	printf("请输入n的值:");
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			ret = j * ret;
+//		}
+//		sum = sum + ret;
+//		ret = 1;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+//12求a+aa+aaa+....,a是一个数，n是a的位数
+//int main()
+//{
+//	int a, n;
+//	int i, ret = 0, sum = 0;
+//	printf("请输入n和a的值：");
+//	scanf("%d%d", &n,&a);
+//	for (i = 0; i < n; i++)
+//	{
+//		ret = a * pow(10, i) + ret;
+//		sum += ret;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+
+//11输入两个整数求最大公因数和最小公倍数
+//int max(int m,int n)
+//{
+//	while (m % n != 0)
+//	{
+//		int temp = n;
+//		n = m % n;
+//		m = temp;
+//	}
+//	return n;
+//}
+//int min(int m,int n)
+//{
+//	int k = max(m, n);
+//	return (m * n) / k;
+//	
+//}
+//int main()
+//{
+//	int m, n;
+//	printf("请输入两个正整数：");
+//	scanf("%d%d", &m, &n);
+//	int ret1 = max(m, n);
+//	printf("最大公因数为  %d\n", ret1);
+//	int ret2 = min(m, n);
+//	printf("最小公倍数为  %d\n", ret2);
+//	return 0;
+//}
+
+//10冒泡排序
+//int main()
+//{
+//	int arr[10];
+//	int i = 0;
+//	int m, n;
+//	printf("请输入10个数：");
+//	for (i = 0; i < 10; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//	}
+//	printf("排序前的顺序是\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("  %d  ", arr[i]);
+//	}
+//	for (m = 0; m < 9; m++)
+//	{
+//		for (n = 0; n < 9 - m; n++)//9-m注意易错
+//		{
+//			if (arr[n] > arr[n + 1])
+//			{
+//				int temp;
+//				temp = arr[n + 1];
+//				arr[n + 1] = arr[n];
+//				arr[n] = temp;
+//			}
+//		}
+//	}
+//	printf("\n排序后的顺序是\n");
+//	for (i = 0; i < 10; i++)
+//	{
+//		printf("  %d  ", arr[i]);
+//	}
+//	return 0;
+//}
+
+//9圆的方程
+//int main()
+//{
+//	int x, y;
+//	int h;
+//	printf("请输入一个坐标:");
+//	scanf("%d,%d", &x, &y);
+//	if ((x - 2) * (x - 2) + (x - 2) * (x - 2) <= 1 || (x + 2) * (x + 2) + (x - 2) * (x - 2) <= 1 || (x + 2) * (x + 2) + (x + 2) * (x + 2) <= 1 || (x - 2) * (x - 2) + (x + 2) * (x + 2) <= 1)
+//	{
+//		h = 10;
+//	}
+//	else
+//		h = 0;
+//	printf("该点的高度为%d", h);
+//	return 0;
+//}
+
+////8给出一个不多于5位的正整数①求出他是几位数②分别输出每一位数③逆序输出每位数
+//int jiwei(int n)//①
+//{
+//	int i = 0;
+//	for (i = 0; n > 0; i++)
+//	{
+//		n = n / 10;
+//	}
+//	return i;
+//}
+//void jishu(int n)//②正序单位输出函数
+//{
+//	if (n > 9)
+//	{
+//		jishu(n / 10);
+//	}
+//		printf("%d ", n % 10);
+//}
+//void nixu(int n)
+//{
+//	int k = jiwei(n);
+//	int m;
+//	for (m=0;m<k;m++)
+//	{
+//		printf("%d ", n % 10);
+//		n = n / 10;
+//	}
+//
+//}
+//int main()
+//{
+//	int n;
+//	printf("please input n:");
+//	scanf("%d", &n);
+//	int ret = jiwei(n);
+//	printf("这个数为 %d 位数\n", ret);
+//	printf("正序输出：");
+//	jishu(n);
+//	printf("\n逆序输出：");
+//	nixu(n);
+//	return 0;
+//}
+
+
+
+//7.用嵌套的if语句判断闰年
+//被4整除不能被100整除，能被4整除且能被400整除
+//int main()
+//{
+//	int year;
+//	int leap;
+//	printf("please input year:");
+//	scanf("%d", &year);
+//	if (year % 4 != 0)
+//		leap = 0;
+//	else if (year % 100 != 0)
+//		leap = 1;
+//	else if (year % 400 != 0)
+//		leap = 0;
+//	else
+//		leap = 1;
+//		if (leap)
+//	{
+//		printf("yes\n");
+//	}
+//	else
+//		printf("no\n");
+//	return 0;
+//}
+//int main()
+//{
+//	int year;
+//	printf("please input year:");
+//	scanf("%d", &year);
+//	if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0))
+//	{
+//		printf("yes\n");
+//	}
+//	else
+//		printf("no\n");
+//}
+//int main()
+//{
+//	int year, leap;
+//	printf("please input year:");
+//	scanf("%d", &year);
+//	if (year%4==0)
+//	{
+//		if (year % 100 == 0)
+//		{
+//			if (year % 400 == 0)
+//			{
+//				leap = 1;
+//			}
+//			else
+//				leap = 0;
+//		}
+//		else
+//			leap = 1;
+//	}
+//	else
+//	{
+//		leap = 0;
+//	}
+//	if (leap)
+//	{
+//		printf("yes\n");
+//	}
+//	else
+//		printf("no\n");
+//	return 0;
+//}
+
+
+//6.输入一个字符转化为小写
+//int main()
+//{
+//	char ch; 
+//	scanf("%c", &ch);
+//	ch = (ch >= 'A' && ch <= 'Z') ? (ch + 32) : ch;//三目运算符
+//	printf("%c", ch);
+//	return 0;
+//}
+
+//5.二元一次方程进阶
+//int main()
+//{
+//	int a, b, c;         //定义变量储存系数
+//	float disc, x1, x2;  
+//	printf("请输入二元一次方程方程的三个系数：");
+//	scanf("%d%d%d", &a, &b, &c);
+//	disc = b * b - 4 * a * c;  //数学公式
+//	if (disc < 0)
+//	{
+//		printf("此方程无根\n");
+//	}
+//	else
+//	{
+//		x1 = (-b + disc) / 2 * a;
+//		x2 = (-b - disc) / 2 * a;
+//		printf("x1=%6.2f    x2=%6.2f", x1, x2);
+//	}
+//	return 0;
+//}
+
+//4.编译密码后移4位
+//int main()
+//{
+//	char arr[20];
+//	int i = 0;
+//	int n;
+//	printf("请输入密码的位数少于10：");
+//	scanf("%d", &n);
+//	printf("请输入密码：");
+//	for (i = 0; i <= n; i++)
+//	{
+//		scanf("%c", &arr[i]);
+//	}
+//	for (i = 0; i <= n; i++)
+//	{
+//		if (arr[i] == 'w' || arr[i] == 'x' || arr[i] == 'y' || arr[i] == 'z')
+//		{
+//			arr[i] = arr[i] - 22;
+//		}
+//		else
+//			arr[i] = arr[i] + 4;
+//	}
+//	printf("加密后的密码为：");
+//	for (i = 0; i <= n; i++)
+//	{
+//		printf("%c", arr[i]);
+//	}
+//	return 0;
+//}
+
+//3.putchar  getchar
+//int main()
+//{
+//	putchar(getchar());
+//	putchar(getchar());
+//	putchar(getchar());
+//	return 0;
+//}
+//int main()
+//{
+//	char a, b, c;
+//	a = getchar();
+//	b = getchar();
+//	c = getchar();
+//	putchar(a);
+//	putchar(b);
+//	putchar(c);
+//	return 0;
+//}
+
+//2.二元一次方程
+//int main()
+//{
+//	int a, b, c;         //定义变量储存系数
+//	float disc, x1, x2;  
+//	printf("请输入二元一次方程方程的三个系数：");
+//	scanf("%d%d%d", &a, &b, &c);
+//	disc = b * b - 4 * a * c;  //数学公式
+//	x1 = (-b + disc) / 2 * a;
+//	x2 = (-b - disc) / 2 * a;
+//	printf("x1=%6.2f    x2=%6.2f", x1, x2);
+//	return 0;
+//}
+
+//1温度转换
+//int main()
+//{
+//	float f;		//定义浮点型变量储存输入的华氏温度
+//	float c;		//定义浮点型变量储存计算的摄氏温度
+//	printf("请输入华氏温度：");
+//	scanf("%f", &f);					//输入函数
+//	c = (5.0 / 9) * (f - 32);          //数学运算
+//	printf("转化为摄氏温度为：%f", c);  //输出结果
+//	return 0;
+//}
+
 //通过指针引用数组元素
 //1下标法
 //int main()
